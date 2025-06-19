@@ -38,6 +38,10 @@ struct HomeView: View {
     }
 }
 
+#Preview {
+    ContentView()
+}
+
 
 extension HomeView {
     private var header: some View {
@@ -261,18 +265,14 @@ extension HomeView {
     }
     
     private var horizontalScrollItems: some View {
-        List {
-            Group {
-                chats(image: .chatPic1, username: "Jessica", isLastMessage: false, lastMessage: "", lastMessageColor: .gray, isYourMove: false, isNewChat: true, time: "6:21 pm", starred: true)
-                chats(image: .chatPic2, username: "Amanda", isLastMessage: true, lastMessage: "Lol i love house music too", lastMessageColor: .white, isYourMove: true, isNewChat: false, time: "6:21 pm")
-                chats(image: .chatPic3, username: "Sila", isLastMessage: true, lastMessage: "You: I love the people there tbh, have you been?", lastMessageColor: .gray, isYourMove: false, isNewChat: false, time: "wed")
-                chats(image: .chatPic4, username: "Marie", isLastMessage: true, lastMessage: "Hahaha that’s interesting, it does seem like people here are starting to like house music more", lastMessageColor: .white, isYourMove: true, isNewChat: false, time: "6:21 pm", unread: true)
-                chats(image: .chatPic1, username: "jessica", isLastMessage: false, lastMessage: "", lastMessageColor: .gray, isYourMove: true, isNewChat: false, time: "6:21 pm")
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHStack(spacing: 14) {
+                horizontalContents(name: "Amanda, 22", question: "What is your favorite chilhood memory?", image: .blur1)
+                horizontalContents(name: "Malte, 31", question: "What is the most important quality in friendships to you?", image: .blur2, madeMove: true)
+                horizontalContents(name: "Binghan, 22", question: "What is your favorite chilhood memory?", image: .binghan, showSoundIcon: true)
             }
-            .listRowInsets(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
         }
-        .listStyle(.inset)
-        .scrollIndicators(.hidden)
+        .frame(height: 205)
     }
     
     private func horizontalContents (name: String, question: String, image: ImageResource, madeMove: Bool = false, showSoundIcon: Bool = false) -> some View {
