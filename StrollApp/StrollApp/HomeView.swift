@@ -305,7 +305,7 @@ extension HomeView {
             LazyHStack(spacing: 15) {
                 horizontalContents(name: "Amanda, 22", question: "What is your favorite chilhood memory?", image: .blur1)
                 horizontalContents(name: "Malte, 31", question: "What is the most important quality in friendships to you?", image: .blur2, madeMove: true)
-                horizontalContents(name: "Binghan, 22", question: "What is your favorite chilhood memory?", image: .binghan, showSoundIcon: true)
+                horizontalContents(name: "Binghan, 22", question: "If you could choose to have one superpower, what would it be?", image: .binghan, showSoundIcon: true)
             }
         }
         .frame(height: 205)
@@ -316,7 +316,8 @@ extension HomeView {
             Image(image)
                 .resizable()
                 .scaledToFill()
-                .frame(width: 145, height: 205)
+                .frame(width: 155, height: 205)
+                .cornerRadius(20)
                 .clipped()
             
             VStack(spacing: 5) {
@@ -346,10 +347,10 @@ extension HomeView {
                                 RoundedRectangle(cornerRadius: 24)
                                     .fill(Color(hex: "#0B0C0D"))
                             )
-                            .padding()
                         
                         Spacer()
                     }
+                    .padding(10)
                 }
                 
                 Spacer()
@@ -378,7 +379,7 @@ extension HomeView {
                 
             }
         }
-        .frame(width: 145, height: 205)
         .cornerRadius(20)
+        .frame(width: 155, height: 205)
     }
 }
