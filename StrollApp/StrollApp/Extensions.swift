@@ -10,6 +10,15 @@ import SwiftUI
 
 extension Color {
     static let appPurple = Color(hex: "#B49AD1")
+    static let timeColor = Color(hex: "#555390")
+    static let newChatColor = Color(hex: "#42406FCC")
+    static let starredColor = Color(hex: "#B5B2FF")
+    
+    static let backgroundGradientColor = LinearGradient(colors: [
+        Color(hex: "#0B0D0E00"),
+        Color(hex: "#0B0D0E"),
+        Color(hex: "#0B0D0E")
+    ], startPoint: .top, endPoint: .bottom)
     
     init(hex: String) {
         // Trim whitespaces and remove '#' if present
@@ -46,5 +55,48 @@ extension Color {
         }
 
         self.init(red: red, green: green, blue: blue, opacity: alpha)
+    }
+}
+
+extension Font {
+    static func interBold(size: CGFloat) -> Font {
+        .custom("Inter24pt-Bold", size: size)
+    }
+    
+    static func proximaRegular(size: CGFloat) -> Font {
+        .custom("ProximaNova-Regular", size: size)
+    }
+    
+    static func proximaRegularItalic(size: CGFloat) -> Font {
+        .custom("ProximaNovaCond-RegularIt", size: size)
+    }
+
+    
+    static func proximaLight(size: CGFloat) -> Font {
+        .custom("ProximaNova-Light", size: size)
+    }
+    
+    static func proximaSemiBold(size: CGFloat) -> Font {
+        .custom("ProximaNovaCond-Semibold", size: size)
+    }
+
+    static func proximaBold(size: CGFloat) -> Font {
+        .custom("ProximaNova-Bold", size: size)
+    }
+
+    static func proximaBoldItalic(size: CGFloat) -> Font {
+        .custom("ProximaNova-BoldIt", size: size)
+    }
+
+    static func proximaExtraBold(size: CGFloat) -> Font {
+        .custom("ProximaNova-ExtraBold", size: size)
+    }
+
+    static func proximaBlack(size: CGFloat) -> Font {
+        .custom("ProximaNova-Black", size: size)
+    }
+
+    static func proximaBlackItalic(size: CGFloat) -> Font {
+        .custom("ProximaNova-BlackIt", size: size)
     }
 }
